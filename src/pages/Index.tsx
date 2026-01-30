@@ -3,22 +3,28 @@ import { ArrowRight, Building2, Home as HomeIcon, Paintbrush, Hammer, CheckCircl
 import SectionHeading from '@/components/SectionHeading';
 import ServiceCard from '@/components/ServiceCard';
 import heroBg from '@/assets/hero-bg.jpg';
+import serviceUpvc from '@/assets/service-upvc.jpg';
+import serviceAluminium from '@/assets/service-aluminium.jpg';
+import serviceInterior from '@/assets/service-interior.jpg';
 
 const services = [
   {
     title: 'UPVC Windows & Doors',
     description: 'Premium UPVC solutions for modern homes with superior insulation and durability.',
     icon: <HomeIcon className="w-6 h-6" />,
+    image: serviceUpvc,
   },
   {
     title: 'Aluminium Windows & Doors',
     description: 'Sleek aluminium frames that combine strength with contemporary aesthetics.',
     icon: <Building2 className="w-6 h-6" />,
+    image: serviceAluminium,
   },
   {
     title: 'Interior Solutions',
     description: 'Complete interior design and execution tailored to your lifestyle.',
     icon: <Paintbrush className="w-6 h-6" />,
+    image: serviceInterior,
   },
 ];
 
