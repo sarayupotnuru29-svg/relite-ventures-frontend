@@ -5,17 +5,26 @@ interface ServiceCardProps {
   title: string;
   description: string;
   icon: React.ReactNode;
+  image: string;
   delay?: number;
 }
 
-const ServiceCard = ({ title, description, icon, delay = 0 }: ServiceCardProps) => {
+const ServiceCard = ({ title, description, icon, image, delay = 0 }: ServiceCardProps) => {
   return (
     <div 
-      className="card-service group"
+      className="card-service group overflow-hidden"
       style={{ animationDelay: `${delay}ms` }}
     >
-      <div className="mb-4 p-3 bg-secondary inline-block rounded-lg text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300">
-        {icon}
+      <div className="relative h-48 -mx-6 -mt-6 mb-5 overflow-hidden">
+        <img 
+          src={image} 
+          alt={title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+        <div className="absolute bottom-3 left-4 p-2 bg-accent rounded-lg text-accent-foreground">
+          {icon}
+        </div>
       </div>
       <h3 className="heading-card mb-3">{title}</h3>
       <p className="text-muted-foreground text-sm leading-relaxed mb-6">
