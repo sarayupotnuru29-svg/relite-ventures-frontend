@@ -1,11 +1,11 @@
 // import { Link } from 'react-router-dom';
-// import { ArrowRight, Building2, Home as HomeIcon, Paintbrush, Hammer, CheckCircle } from 'lucide-react';
+// import { ArrowRight, Building2, Home as HomeIcon, Paintbrush, CheckCircle } from 'lucide-react';
 // import SectionHeading from '@/components/SectionHeading';
 // import ServiceCard from '@/components/ServiceCard';
-// import heroBg from '@/assets/hero-bg.jpg';
-// import serviceUpvc from '@/assets/service-upvc.jpg';
-// import serviceAluminium from '@/assets/service-aluminium.jpg';
-// import serviceInterior from '@/assets/service-interior.jpg';
+// import heroBg from '@/assets/heronew.png';
+// import serviceUpvc from '@/assets/UPVC.jpeg';
+// import serviceAluminium from '@/assets/ALUMINIUM.jpg';
+// import serviceInterior from '@/assets/Interiors.jpg';
 
 // const services = [
 //   {
@@ -111,44 +111,31 @@
 //         </div>
 //       </section>
 
-//       {/* Why Choose Us */}
+//       {/* Why Choose Us - Image Block Removed */}
 //       <section className="section-padding bg-secondary">
 //         <div className="container-custom">
-//           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-//             <div>
-//               <SectionHeading
-//                 title="Why Choose R Elite?"
-//                 subtitle="We bring decades of experience and a commitment to excellence in every project we undertake."
-//               />
-              
-//               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-//                 {highlights.map((highlight) => (
-//                   <div key={highlight} className="flex items-center gap-3">
-//                     <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
-//                     <span className="text-sm font-medium">{highlight}</span>
-//                   </div>
-//                 ))}
-//               </div>
-
-//               <Link
-//                 to="/about"
-//                 className="btn-primary inline-flex items-center gap-2 mt-8"
-//               >
-//                 Learn More About Us
-//                 <ArrowRight className="w-5 h-5" />
-//               </Link>
-//             </div>
-
-//             <div className="relative">
-//               <div className="aspect-square bg-gradient-to-br from-charcoal to-charcoal-light rounded-lg flex items-center justify-center">
-//                 <div className="text-center p-8">
-//                   <Hammer className="w-16 h-16 text-accent mx-auto mb-4" />
-//                   <p className="text-primary-foreground font-display text-2xl mb-2">100+</p>
-//                   <p className="text-muted-foreground text-sm">Projects Completed</p>
+//           <div className="max-w-4xl mx-auto">
+//             <SectionHeading
+//               title="Why Choose R Elite?"
+//               subtitle="We bring decades of experience and a commitment to excellence in every project we undertake."
+//             />
+            
+//             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+//               {highlights.map((highlight) => (
+//                 <div key={highlight} className="flex items-center gap-3">
+//                   <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+//                   <span className="text-base font-medium">{highlight}</span>
 //                 </div>
-//               </div>
-//               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent rounded-lg -z-10" />
+//               ))}
 //             </div>
+
+//             <Link
+//               to="/about"
+//               className="btn-primary inline-flex items-center gap-2 mt-10"
+//             >
+//               Learn More About Us
+//               <ArrowRight className="w-5 h-5" />
+//             </Link>
 //           </div>
 //         </div>
 //       </section>
@@ -201,10 +188,8 @@
 // export default Index;
 
 
-
-
 import { Link } from 'react-router-dom';
-import { ArrowRight, Building2, Home as HomeIcon, Paintbrush, CheckCircle } from 'lucide-react';
+import { ArrowRight, Building2, Home as HomeIcon, Paintbrush, CheckCircle, MessageCircle } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import ServiceCard from '@/components/ServiceCard';
 import heroBg from '@/assets/heronew.png';
@@ -243,8 +228,24 @@ const highlights = [
 ];
 
 const Index = () => {
+  // WhatsApp Configuration
+  const whatsappNumber = "918985501476"; // Added country code 91
+  const whatsappMsg = encodeURIComponent("Hello! I'm interested in your design and building solutions.");
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMsg}`;
+
   return (
-    <main>
+    <main className="relative">
+      {/* WhatsApp Floating Button */}
+      <a 
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 flex items-center justify-center"
+        aria-label="Contact on WhatsApp"
+      >
+        <MessageCircle className="w-6 h-6" />
+      </a>
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center">
         <div
@@ -316,7 +317,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why Choose Us - Image Block Removed */}
+      {/* Why Choose Us */}
       <section className="section-padding bg-secondary">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
