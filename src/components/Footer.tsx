@@ -138,7 +138,7 @@
 
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
-import logo from '@/assets/relite-logo.jpeg';
+import logo from '@/assets/apple-touch-icon.png';
 
 const Footer = () => {
   return (

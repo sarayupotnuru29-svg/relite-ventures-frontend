@@ -207,10 +207,10 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Home as HomeIcon, Paintbrush, CheckCircle } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import ServiceCard from '@/components/ServiceCard';
-import heroBg from '@/assets/heronew.jpg';
-import serviceUpvc from '@/assets/service-upvc.jpg';
-import serviceAluminium from '@/assets/service-aluminium.jpg';
-import serviceInterior from '@/assets/service-interior.jpg';
+import heroBg from '@/assets/heronew.png';
+import serviceUpvc from '@/assets/UPVC.jpeg';
+import serviceAluminium from '@/assets/ALUMINIUM.jpg';
+import serviceInterior from '@/assets/Interiors.jpg';
 
 const services = [
   {
