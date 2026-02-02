@@ -3,12 +3,17 @@ import SectionHeading from '@/components/SectionHeading';
 import ServiceCard from '@/components/ServiceCard';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import serviceUpvc from '@/assets/service-upvc.jpg';
-import serviceAluminium from '@/assets/service-aluminium.jpg';
-import serviceInterior from '@/assets/service-interior.jpg';
-import serviceWallpaper from '@/assets/service-wallpaper.jpg';
+import serviceUpvc from '@/assets/UPVC.jpeg';
+import serviceAluminium from '@/assets/ALUMINIUM.jpg';
+import servicewoodwindows from '@/assets/wood_windows_doors.jpg';
+import serviceglazing from '@/assets/Glazing_works.jpg';
+import servicepartition from '@/assets/Partition_works.jpg';
+import serviceInterior from '@/assets/Interiors.jpg';
 import serviceCivil from '@/assets/service-civil.jpg';
-import serviceTurnkey from '@/assets/service-turnkey.jpg';
+import serviceshuttering from '@/assets/shuttering_bar_bending_works.jpg';
+import servicewpc from '@/assets/WPC_doors.webp';
+import servicepleated from '@/assets/Pleated_mesh.png';
+import serviceWallpaper from '@/assets/wallpaper_decors.jpg';
 
 const services = [
   {
@@ -24,28 +29,58 @@ const services = [
     image: serviceAluminium,
   },
   {
+    title: 'Wood Windows and Doors',
+    description: 'Timeless wooden frames crafted with premium timber to provide natural insulation and classic elegance for any architectural style.',
+    icon: <Building2 className="w-6 h-6" />,
+    image: servicewoodwindows,
+  },
+  {
+    title: 'Glazing Works',
+    description: 'High-performance glass solutions featuring advanced thermal tempering and architectural glazing for stunning, energy-efficient facades.',
+    icon: <Building2 className="w-6 h-6" />,
+    image: serviceglazing,
+  },
+   {
+    title: 'Partition Works',
+    description: 'Versatile wall partitioning systems designed to optimize space, enhance privacy, and provide flexible layouts for both office and residential environments.',
+    icon: <Building2 className="w-6 h-6" />,
+    image: servicepartition,
+  },
+  {
     title: 'Interior Solutions',
     description: 'Complete interior design and execution tailored to your lifestyle. From modular kitchens to wardrobes, we create spaces that reflect your personality and needs.',
     icon: <Paintbrush className="w-6 h-6" />,
     image: serviceInterior,
   },
-  {
-    title: 'Wallpapers',
-    description: 'Transform your walls with our premium collection of wallpapers. From elegant textures to bold patterns, find the perfect backdrop for every room.',
-    icon: <Image className="w-6 h-6" />,
-    image: serviceWallpaper,
-  },
-  {
+   {
     title: 'Civil Works',
     description: 'Professional civil construction services including structural work, renovations, and repairs. Quality craftsmanship backed by years of experience.',
     icon: <Hammer className="w-6 h-6" />,
     image: serviceCivil,
   },
   {
-    title: 'End-to-End Turnkey Construction',
-    description: 'Complete building solutions from land to key handover. We handle everything from planning, approvals, construction to finishing — delivering your dream home hassle-free.',
+    title: 'Shuttering and Bar Bending Works',
+    description: 'Precision formwork and structural steel reinforcement services ensuring maximum stability and load-bearing strength for durable concrete structures.',
+    icon: <Hammer className="w-6 h-6" />,
+    image: serviceshuttering,
+  },
+  {
+    title: 'WPC Doors',
+    description: 'Modern eco-friendly doors combining the natural look of wood with the moisture resistance of polymer for a 100% waterproof and termite-proof solution.',
     icon: <Key className="w-6 h-6" />,
-    image: serviceTurnkey,
+    image: servicewpc,
+  },
+   {
+    title: 'Pleated Mesh',
+    description: 'Innovative retractable screening systems featuring durable pleated mesh to provide seamless insect protection without compromising ventilation or views.',
+    icon: <Key className="w-6 h-6" />,
+    image: servicepleated,
+  },
+   {
+    title: 'Wallpapers',
+    description: 'Transform your walls with our premium collection of wallpapers. From elegant textures to bold patterns, find the perfect backdrop for every room.',
+    icon: <Image className="w-6 h-6" />,
+    image: serviceWallpaper,
   },
 ];
 

@@ -93,7 +93,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold mb-1">Our Office</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      #1, Society Colony Main Rd, Society Colony<br />
+                      #1, Society Colony Main Rd<br />
                       <span className="text-sm">Landmark: Beside Peepal Tree School</span><br />
                       Madanapalle, Andhra Pradesh – 517325
                     </p>
