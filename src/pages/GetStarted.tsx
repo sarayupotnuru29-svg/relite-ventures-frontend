@@ -12,7 +12,7 @@ const serviceOptions = [
   'Other',
 ];
 
-const WHATSAPP_NUMBER = '919285501476';
+const WHATSAPP_NUMBER = '8985501476';
 
 const GetStarted = () => {
   const [formData, setFormData] = useState({
