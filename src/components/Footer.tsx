@@ -3,6 +3,20 @@ import { Phone, Mail, MapPin, Facebook, Instagram, Heart } from 'lucide-react';
 import logo from '@/assets/apple-touch-icon.png';
 
 const Footer = () => {
+  // Hardcoded to match Navbar order and App.tsx paths exactly
+  const quickLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'About Us', path: '/about' },
+    { name: 'Services', path: '/services' },
+    { name: 'Contact Us', path: '/contact' },
+    { name: 'Get Started', path: '/get-started' },
+  ];
+
+  // Helper function to handle scrolling when clicking a link to the same page
+  const handleLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  };
+
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container-custom section-padding-sm">
@@ -29,20 +43,21 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-display font-semibold mb-4 text-accent">Quick Links</h4>
             <ul className="space-y-2">
-              {['Home', 'About Us', 'Services', 'Get Started', 'Contact Us'].map((link) => (
-                <li key={link}>
+              {quickLinks.map((link) => (
+                <li key={link.name}>
                   <Link
-                    to={link === 'Home' ? '/' : `/${link.toLowerCase().replace(' ', '-')}`}
+                    to={link.path}
+                    onClick={handleLinkClick}
                     className="text-sm text-muted-foreground hover:text-accent transition-colors duration-300"
                   >
-                    {link}
+                    {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Services - Updated with Scroll-to-Top Logic */}
           <div>
             <h4 className="text-lg font-display font-semibold mb-4 text-accent">Services</h4>
             <ul className="space-y-2">
@@ -58,7 +73,8 @@ const Footer = () => {
                 <li key={service}>
                   <Link
                     to="/services"
-                    className="text-sm text-muted-foreground hover:text-accent transition-colors duration-300"
+                    onClick={handleLinkClick}
+                    className="text-sm text-muted-foreground hover:text-accent transition-colors duration-300 block"
                   >
                     {service}
                   </Link>
@@ -83,6 +99,7 @@ const Footer = () => {
                 </div>
               </li>
               <li className="flex items-start gap-3">
+                <circle className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
                 <Mail className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
                 <a
                   href="mailto:relitedesignventures@gmail.com"
@@ -100,53 +117,29 @@ const Footer = () => {
             </ul>
 
             <div className="flex gap-4 mt-6">
-              <a
-                href="https://www.facebook.com/share/16pwLMLwEB/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-charcoal-light rounded-full hover:bg-accent hover:text-accent-foreground transition-all duration-300"
-              >
+              <a href="https://www.facebook.com/share/16pwLMLwEB/" target="_blank" rel="noopener noreferrer" className="p-2 bg-charcoal-light rounded-full hover:bg-accent hover:text-accent-foreground transition-all duration-300">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a
-                href="https://www.instagram.com/relitedesignventures"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-charcoal-light rounded-full hover:bg-accent hover:text-accent-foreground transition-all duration-300"
-              >
+              <a href="https://www.instagram.com/relitedesignventures" target="_blank" rel="noopener noreferrer" className="p-2 bg-charcoal-light rounded-full hover:bg-accent hover:text-accent-foreground transition-all duration-300">
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar - Line by Line Reordered */}
+        {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-charcoal-light">
           <div className="flex flex-col items-center justify-center gap-3 text-center">
-            {/* Line 1: Copyright */}
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} R Elite Design Ventures & Building Solutions. All rights reserved.
             </p>
-            
-            {/* Line 2: Tagline */}
             <p className="text-sm text-muted-foreground italic tracking-wide">
               Making Your Vision Into Reality
             </p>
-
-            {/* Line 3: StaffArc Attribution (Last) */}
             <div className="flex items-center gap-1 text-sm text-muted-foreground">
               Made with <Heart className="inline h-4 w-4 text-red-500 mx-1 fill-red-500" /> by
-              <a
-                href="https://staffarc.in"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1 text-[#FF4D00] hover:underline font-medium"
-              >
-                <img
-                  src="https://www.staffarc.in/images/Staffarc-logo.png"
-                  alt="StaffArc logo"
-                  className="h-5 w-5 object-contain"
-                />
+              <a href="https://staffarc.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-[#FF4D00] hover:underline font-medium">
+                <img src="https://www.staffarc.in/images/Staffarc-logo.png" alt="StaffArc logo" className="h-5 w-5 object-contain" />
                 StaffArc
               </a>
             </div>
