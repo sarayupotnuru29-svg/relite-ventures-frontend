@@ -27,6 +27,9 @@ const Navbar = () => {
     setIsOpen(false);
   }, [location]);
 
+  // Helper to check if Get Started is active
+  const isGetStartedActive = location.pathname === '/get-started';
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -55,16 +58,22 @@ const Navbar = () => {
                 to={link.path}
                 className={`text-sm font-medium transition-colors duration-300 ${
                   location.pathname === link.path
-                    ? 'text-accent'
-                    : 'text-primary-foreground hover:text-accent'
+                    ? 'text-[#EAB308]' // Yellow text for active links
+                    : 'text-white hover:text-[#EAB308]'
                 }`}
               >
                 {link.name}
               </Link>
             ))}
+            
+            {/* Get Started Button - Yellow Highlight with White Text */}
             <Link
               to="/get-started"
-              className="btn-primary text-sm py-2 px-4"
+              className={`text-sm py-2 px-6 rounded-full font-bold transition-all duration-300 border-2 ${
+                isGetStartedActive 
+                  ? 'bg-[#EAB308] border-[#EAB308] text-white shadow-lg' // Highlighted state
+                  : 'bg-transparent border-[#EAB308] text-[#EAB308] hover:bg-[#EAB308] hover:text-white' // Default state
+              }`}
             >
               Get Started
             </Link>
@@ -73,7 +82,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-primary-foreground hover:text-accent transition-colors"
+            className="md:hidden p-2 text-white hover:text-[#EAB308] transition-colors"
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -93,8 +102,8 @@ const Navbar = () => {
                 to={link.path}
                 className={`text-base font-medium py-2 transition-colors duration-300 ${
                   location.pathname === link.path
-                    ? 'text-accent'
-                    : 'text-primary-foreground hover:text-accent'
+                    ? 'text-[#EAB308]'
+                    : 'text-white hover:text-[#EAB308]'
                 }`}
               >
                 {link.name}
@@ -102,7 +111,11 @@ const Navbar = () => {
             ))}
             <Link
               to="/get-started"
-              className="btn-primary text-center py-3"
+              className={`text-center py-3 rounded-xl font-bold transition-all duration-300 ${
+                isGetStartedActive
+                  ? 'bg-[#EAB308] text-white'
+                  : 'bg-white text-[#1A3C34] hover:bg-[#EAB308] hover:text-white'
+              }`}
             >
               Get Started
             </Link>
